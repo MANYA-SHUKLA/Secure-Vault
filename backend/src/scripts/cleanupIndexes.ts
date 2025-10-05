@@ -12,7 +12,7 @@ const cleanupUnusedIndexes = async () => {
     
     console.log('Connected to MongoDB');
     
-    // Get the users collection
+  
     const db = mongoose.connection.db;
     const usersCollection = db?.collection('users');
     
@@ -20,11 +20,11 @@ const cleanupUnusedIndexes = async () => {
       throw new Error('Users collection not found');
     }
     
-    // Get all indexes
+ 
     const indexes = await usersCollection.indexes();
     console.log('Current indexes:', indexes);
     
-    // List of unused indexes to drop
+    
     const indexesToDrop = [
       'emailVerificationToken_1',
       'passwordResetToken_1'
@@ -52,7 +52,7 @@ const cleanupUnusedIndexes = async () => {
       console.log(`\n✅ Total indexes dropped: ${droppedCount}`);
     }
     
-    // Show remaining indexes
+    
     const remainingIndexes = await usersCollection.indexes();
     console.log('\nRemaining indexes:', remainingIndexes);
     
