@@ -10,19 +10,29 @@ router.post('/register', async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // Validate input
     if (!email || !password) {
       return res.status(400).json({ message: 'Email and password are required' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: 'Invalid email format' });
+    }
+
+    // Validate password length
     if (password.length < 6) {
       return res.status(400).json({ message: 'Password must be at least 6 characters' });
     }
 
+    // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
+    // Create new user with only email and password
     const user = new User({ email, password });
     await user.save();
 
@@ -37,8 +47,21 @@ router.post('/register', async (req, res) => {
       token,
       user: { id: user._id, email: user.email }
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Registration error:', error);
+    
+    // Handle MongoDB duplicate key error specifically
+    if (error.code === 11000) {
+      // Check if it's a username index issue
+      if (error.keyPattern && error.keyPattern.username) {
+        return res.status(500).json({ 
+          message: 'Database configuration error. Please contact support or try again later.' 
+        });
+      }
+      // Other duplicate key errors
+      return res.status(400).json({ message: 'User already exists' });
+    }
+    
     res.status(500).json({ message: 'Internal server error' });
   }
 });
