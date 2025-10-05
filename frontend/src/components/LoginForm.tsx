@@ -32,7 +32,7 @@ const LoginForm: React.FC<{
 
   return (
   <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-neutral-900 dark:via-blue-900/20 dark:to-purple-900/20 py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Animated background shapes */}
+     
   <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 dark:bg-purple-500/20 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 dark:bg-blue-500/20 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -48,11 +48,11 @@ const LoginForm: React.FC<{
       </div>
 
       <div className="max-w-md w-full space-y-8 relative z-10">
-        {/* Logo with animation */}
+    
         <div className="text-center animate-fade-in-down group/logo">
           <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg transform hover:scale-125 transition-all duration-500 hover:rotate-[360deg] hover:shadow-2xl hover:shadow-blue-500/50 cursor-pointer relative">
             <Lock className="h-8 w-8 text-white transition-transform duration-500 group-hover/logo:scale-110" />
-            {/* Sparkle on hover */}
+          
             <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-yellow-300 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 animate-pulse" />
           </div>
           <h2 className="mt-6 text-center text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent transition-all duration-300 hover:from-purple-600 hover:to-pink-600 dark:hover:from-purple-400 dark:hover:to-pink-400 cursor-default">
@@ -64,14 +64,14 @@ const LoginForm: React.FC<{
         </div>
 
         <form className="mt-8 space-y-6 animate-fade-in-up bg-white/60 dark:bg-neutral-800/60 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-neutral-700 transition-all duration-500 hover:shadow-2xl hover:scale-[1.01] group/form" onSubmit={handleSubmit}>
-          {/* Decorative gradient on hover */}
+         
           <div className="absolute inset-0 opacity-0 group-hover/form:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse" />
           </div>
           
           {error && (
             <div className="rounded-lg bg-red-50 dark:bg-red-900/20 p-4 animate-shake backdrop-blur-sm border border-red-200 dark:border-red-800 relative overflow-hidden group/error">
-              {/* Animated border */}
+       
               <div className="absolute inset-0 border-2 border-red-400 dark:border-red-600 rounded-lg animate-pulse" />
               <div className="flex relative z-10">
                 <AlertCircle className="h-5 w-5 text-red-400 animate-pulse" />
@@ -141,7 +141,7 @@ const LoginForm: React.FC<{
               disabled={isLoading}
               className="group/submit relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden"
             >
-              {/* Animated shine effect */}
+             
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/submit:translate-x-[200%] transition-transform duration-700" />
               
               {isLoading ? (
