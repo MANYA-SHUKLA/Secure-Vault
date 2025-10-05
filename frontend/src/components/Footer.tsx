@@ -6,7 +6,7 @@ import { Github, Heart, Shield, Sparkles } from 'lucide-react';
 const Footer: React.FC = () => {
   return (
     <footer className="mt-12 border-t border-gray-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-md supports-[backdrop-filter]:bg-white/40 dark:supports-[backdrop-filter]:bg-neutral-900/40 relative overflow-hidden group/footer transition-all duration-500 hover:bg-white/70 dark:hover:bg-neutral-900/70 hover:shadow-lg">
-      {/* Subtle decorative background with animation */}
+     
       <div className="absolute inset-0 pointer-events-none opacity-5 group-hover/footer:opacity-10 transition-opacity duration-500">
         <div
           className="absolute inset-0 animate-pulse"
@@ -14,12 +14,11 @@ const Footer: React.FC = () => {
         />
       </div>
       
-      {/* Animated gradient overlay on hover */}
+     
       <div className="absolute inset-0 opacity-0 group-hover/footer:opacity-100 transition-opacity duration-700 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse" />
       </div>
-      
-      {/* Sparkle effects */}
+    
       <div className="absolute top-2 right-10 opacity-0 group-hover/footer:opacity-100 transition-opacity duration-300 pointer-events-none">
         <Sparkles className="w-3 h-3 text-yellow-400 dark:text-yellow-300 animate-pulse" />
       </div>
@@ -40,7 +39,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center gap-4 text-sm">
           <a
-            href="https://github.com/"
+            href="https://github.com/MANYA-SHUKLA/password-vault"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 group/link hover:scale-110 hover:drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] dark:hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)]"
