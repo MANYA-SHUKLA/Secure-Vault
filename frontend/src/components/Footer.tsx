@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center gap-4 text-sm">
           <a
-            href="https:github.com/MANYA-SHUKLA/password-vault"
+            href="https://github.com/MANYA-SHUKLA/Secure-Vault"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 group/link hover:scale-110 hover:drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] dark:hover:drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)]"
