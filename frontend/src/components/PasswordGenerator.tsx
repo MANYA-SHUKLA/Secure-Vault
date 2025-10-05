@@ -34,7 +34,7 @@ const PasswordGenerator: React.FC<{
     try {
       await navigator.clipboard.writeText(password);
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 15000); // Clear after 15 seconds
+      setTimeout(() => setIsCopied(false), 15000); 
     } catch (err) {
       console.error('Failed to copy password:', err);
     }
@@ -47,7 +47,7 @@ const PasswordGenerator: React.FC<{
     const newOptions = { ...options, [key]: value };
     setOptions(newOptions);
     
-    // Regenerate password instantly when options change
+    
     if (password) {
       generateNewPassword();
     }
@@ -61,16 +61,16 @@ const PasswordGenerator: React.FC<{
 
   return (
     <div className="relative bg-white/90 dark:bg-neutral-800/90 rounded-lg shadow-md border border-gray-200 dark:border-neutral-700 p-6 overflow-hidden backdrop-blur transition-all duration-300 hover:shadow-xl hover:scale-[1.01] group/generator">
-      {/* Decorative background image */}
+      
       <div
         className="absolute -z-10 inset-0 opacity-10 group-hover/generator:opacity-15 transition-opacity duration-500"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=40')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       />
-      {/* Animated blobs */}
+    
       <div className="absolute -z-10 -top-16 -right-16 w-48 h-48 bg-blue-300 dark:bg-blue-500/30 rounded-full blur-3xl opacity-60 animate-blob" />
       <div className="absolute -z-10 -bottom-16 -left-16 w-48 h-48 bg-purple-300 dark:bg-purple-500/30 rounded-full blur-3xl opacity-60 animate-blob animation-delay-2000" />
       
-      {/* Sparkle decorations */}
+   
       <Sparkles className="absolute top-4 right-4 w-5 h-5 text-yellow-400 dark:text-yellow-300 opacity-0 group-hover/generator:opacity-100 transition-all duration-300 animate-pulse" />
       <Zap className="absolute bottom-4 left-4 w-4 h-4 text-blue-400 dark:text-blue-300 opacity-0 group-hover/generator:opacity-100 transition-all duration-500 delay-100 animate-pulse" />
       
@@ -79,7 +79,6 @@ const PasswordGenerator: React.FC<{
         Password Generator
       </h2>
       
-      {/* Generated Password Display */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-2">
           <input
@@ -110,7 +109,7 @@ const PasswordGenerator: React.FC<{
           </button>
         </div>
         
-        {/* Password Strength Meter */}
+  
         {password && (
           <div className="flex items-center gap-2 animate-fade-in">
             <div className="flex-1 h-2 bg-gray-200 dark:bg-neutral-700 rounded-full overflow-hidden relative group/strength">
@@ -118,7 +117,7 @@ const PasswordGenerator: React.FC<{
                 className={`h-full transition-all duration-500 ${strengthColors[strength - 1] || 'bg-gray-300'} relative overflow-hidden`}
                 style={{ width: `${(strength / 8) * 100}%` }}
               >
-                {/* Animated shine effect */}
+              
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2s_infinite] group-hover/strength:animate-[shimmer_1s_infinite]" />
               </div>
             </div>
@@ -129,9 +128,9 @@ const PasswordGenerator: React.FC<{
         )}
       </div>
 
-      {/* Options */}
+      
       <div className="space-y-4">
-        {/* Length Slider */}
+     
         <div className="group/slider">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-all duration-300 group-hover/slider:text-blue-600 dark:group-hover/slider:text-blue-400 group-hover/slider:font-semibold">
             Length: <span className="text-blue-600 dark:text-blue-400 font-bold">{options.length}</span> characters
@@ -146,7 +145,7 @@ const PasswordGenerator: React.FC<{
           />
         </div>
 
-        {/* Checkbox Options */}
+    
         <div className="grid grid-cols-2 gap-4">
           <label className="flex items-center space-x-2 p-2 rounded-lg transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:scale-105 cursor-pointer group/option">
             <input
@@ -189,13 +188,13 @@ const PasswordGenerator: React.FC<{
           </label>
         </div>
 
-        {/* Generate Button */}
+ 
         <button
           onClick={generateNewPassword}
           disabled={isGenerating}
           className="w-full bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white py-2 px-4 rounded-md hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed group/generate relative overflow-hidden"
         >
-          {/* Animated shine effect */}
+      
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/generate:translate-x-[200%] transition-transform duration-700" />
           <span className="relative flex items-center justify-center gap-2 font-semibold">
             <Zap className={`w-4 h-4 transition-all duration-300 group-hover/generate:scale-125 group-hover/generate:rotate-12 ${isGenerating ? 'animate-pulse' : ''}`} />
